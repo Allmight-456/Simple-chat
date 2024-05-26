@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat App</title>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: Arial, sans-serif; /* Added font family for better readability */
+    }
+
+    #message-container {
+      width: 100%; /* Set width to 100% */
+      max-width: 800px; /* Reduce max-width for better readability */
+      margin: 0 auto; /* Center align the container */
+      padding: 20px; /* Add some padding for spacing */
+      border-radius: 8px; /* Add rounded corners */
+      background-color: #f4f4f4; /* Light gray background */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    }
+
+    .message {
+      background-color: #e6f7ff; /* Light blue background for messages */
+      padding: 10px; /* Add padding for spacing */
+      margin-bottom: 10px; /* Add margin bottom for spacing between messages */
+      border-radius: 8px; /* Add rounded corners */
+    }
+
+    #send-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%; /* Set width to 100% */
+      max-width: 800px; /* Reduce max-width for better readability */
+      margin: 20px auto; /* Center align the container */
+      padding: 10px; /* Add some padding for spacing */
+      background-color: #f4f4f4; /* Light gray background */
+      border-radius: 8px; /* Add rounded corners */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+      display: flex; /* Use flexbox for alignment */
+    }
+
+    #message-input {
+      flex-grow: 1;
+      padding: 8px; /* Add padding for input field */
+      border: none; /* Remove border */
+      border-radius: 4px; /* Add rounded corners */
+      margin-right: 8px; /* Add margin between input and button */
+    }
+
+    #send-button {
+      padding: 8px 16px; /* Add padding for button */
+      border: none; /* Remove border */
+      border-radius: 4px; /* Add rounded corners */
+      background-color: #007bff; /* Blue background color */
+      color: #fff; /* White text color */
+      cursor: pointer; /* Change cursor to pointer on hover */
+    }
+
+    #send-button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <div id="message-container"></div>
+  <form id="send-container">
+    <input type="text" id="message-input" placeholder="Type your message...">
+    <button type="submit" id="send-button">Send</button>
+  </form>
+</body>
+</html>
